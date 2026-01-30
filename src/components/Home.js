@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import Menu from './Menu'
-import bottom from '../assets/bottom.png';
+import feature1 from '../assets/feature1.png';
+import feature2 from '../assets/feature2.png';
+import feature3 from '../assets/feature3.png';
 import account1 from '../assets/account1.png';
 import account2 from '../assets/account2.png';
 import cash1 from '../assets/cash1.png';
@@ -12,6 +14,7 @@ import Card from '../assets/Card.png';
 import instant from '../assets/instant.png';
 import cash from '../assets/cash.png';
 import buy from '../assets/buy.png';
+import whatsapp from '../assets/whatsapp.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Faq from './Faq';
@@ -49,6 +52,41 @@ export default function Home() {
         },
     ];
 
+    const features = [
+        {
+            feature_img: feature1,
+            feature_heading: 'International & Local Payments',
+            feature_desc: <div className='space-y-5'>
+                <p>Send and receive cross-border transfers in all major currencies.</p>
+                <p>Real-time instant transfers in GBP and EUR.</p>
+                <p>Bulk transfer support – ideal for payroll, vendor payments, or repeated remittances.</p>
+                <p>Payment tracking with notifications – receive real-time updates on payment status, from initiation to completion.</p>
+            </div>,
+        },
+
+        {
+            feature_img: feature2,
+            feature_heading: 'Multi-Currency & FX Management',
+            feature_desc: <div className='space-y-5'>
+                <p>Major global currencies, enabling smooth international transactions.</p>
+                <p>Multi-currency IBANs tied to your business for direct receipt and payment in various currencies.</p>
+                <p>Multi-currency exchange, including buying, selling, and transferring foreign currencies.</p>
+            </div>,
+        },
+
+        {
+            feature_img: feature3,
+            feature_heading: 'Integration & Business Tools',
+            feature_desc: <div className='space-y-5'>
+                <p>Bulk transaction automation – streamline recurring or high-volume
+                    payments, reducing manual input.</p>
+                <p>Real-time settlement tracking –
+                    monitor payment statuses instantly for better cash flow visibility.</p>
+                <p>User access controls and permissions – manage team roles securely, allowing different levels of access.</p>
+            </div>,
+        },
+    ]
+
     return (
         <div className="bg-black-100 font-poppins overflow-hidden text-white-100">
 
@@ -60,7 +98,7 @@ export default function Home() {
 
                         <div className='lg:w-4/12 '>
                             <img src={top} alt='' className='absolute top-0 left-0 ml-64 w-64 h-auto object-cover animate-img'></img>
-                            
+
                         </div>
 
                         <div className='lg:w-8/12'>
@@ -257,7 +295,7 @@ export default function Home() {
                             </div>
                         </div>
 
-                        <img src={cash} alt='card' className='w-80 z-10 flex mx-auto'></img>
+                        <img src={cash} alt='card' className='md:w-80 w-64 z-10 flex mx-auto'></img>
 
                         <div className='flex flex-col gap-y-6'>
                             <div className='bg-black-100 backdrop-blur-md p-5 rounded-3xl bg-opacity-70 border border-white-50 border-opacity-25'>
@@ -339,6 +377,29 @@ export default function Home() {
                 </div>
             </div>
 
+            <div className="lg:px-20 px-5 py-6">
+                <div className='container mx-auto'>
+                    <h3 className='md:text-5xl text-2xl font-medium text-center md:mb-20 mb-8'>
+                        Key Features & Capabilities
+                    </h3>
+
+                    <div className="grid lg:grid-cols-3 grid-cols-1 items-center justify-evenly justify-items-center lg:gap-12 gap-16 md:pt-12 pt-6 lg:divide-x-2 divide-x-0 lg:divide-y-0 divide-y-2 divide-yellow-100">
+                        {features.map((feature, index) => (
+
+                            <div key={index} className='text-center md:space-y-8 space-y-5 lg:pl-8 lg:pt-0 pt-5'>
+
+                                <img src={feature.feature_img} alt='icon' className='flex mx-auto md:w-32 w-28'></img>
+
+                                <h3 className='md:text-2xl text-xl font-semibold'>{feature.feature_heading}</h3>
+
+                                <div>{feature.feature_desc}</div>
+
+                            </div>
+
+                        ))}
+                    </div>
+                </div>
+            </div>
             {/* Innovating section */}
 
             <div className="lg:px-20 px-5 lg:py-28 py-6 bg-merchant">
@@ -383,7 +444,7 @@ export default function Home() {
 
             {/* faq section */}
 
-            <div id='faq' className="lg:px-20 px-5 py-8 relative z-10 bg-faq">
+            <div id='faq' className="lg:px-20 px-5 py-12 bg-faq">
                 <div className='container mx-auto'>
 
                     <div data-aos='fade-up' className='text-center space-y-4'>
@@ -394,14 +455,13 @@ export default function Home() {
                         <Faq items={faqItems} />
                     </div>
 
-
                     <div className='md:pt-32 pt-12 space-y-8'>
 
-                        <div className="flex flex-wrap justify-between gap-24 items-start">
+                        <div className="lg:flex justify-between gap-24 items-start lg:space-y-0 space-y-6">
 
                             <div className='lg:w-1/2 space-y-6'>
                                 <p><strong>Contact email:</strong> contact@flopay.com</p>
-                                <p><strong>Whatsapp:</strong> +44 xxxxxxxx</p>
+                                <a href='https://wa.me/447457404644' className='flex gap-3 items-center hover:underline'><strong>Whatsapp:</strong> +44 7457 404644 <span><img src={whatsapp} alt='icon' className='w-8'></img></span></a>
                                 <p><strong>Location</strong><br></br>
                                     1 Allied Business Centre, Coldharbour Lane, Harpenden AL5 4UT
                                 </p>
