@@ -215,7 +215,7 @@ export default function Home() {
 
             {/* feature s section */}
 
-            <section id='features' className="lg:px-20 px-5 lg:pb-20 py-6 relative z-10">
+            <section className="lg:px-20 px-5 lg:pb-20 py-6 relative z-10">
                 <div className='container mx-auto'>
                     <h2 className='md:text-4xl text-2xl font-semibold text-center'>
                         Buy & Sell Crypto Instantly
@@ -377,7 +377,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="lg:px-20 px-5 py-6">
+            <div id='features' className="lg:px-20 px-5 py-6">
                 <div className='container mx-auto'>
                     <h3 className='md:text-5xl text-2xl font-medium text-center md:mb-20 mb-8'>
                         Key Features & Capabilities
